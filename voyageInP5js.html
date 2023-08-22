@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voyage IN P5.js</title>
+    <link
+      rel="icon"
+      href="https://media2.giphy.com/media/l41YtzJmMgEyOWBKU/giphy.gif?cid=ecf05e47lav17vbfrpo6jurbgxrzsaymdyti9uhc66tfiaa0&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+      type="image/gif"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      /* Add any additional custom styles here */
+      .iframe-container {
+        position: relative;
+        overflow-x: hidden;
+        padding-top: 56.25%;
+      }
+      .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="display-4">Prashant's Voyage In P5.js</h1>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h2>What am I doing here?</h2>
+          <p>
+            This is the exploratory tab for all the mini-projects I created by
+            p5.js, some of them are games while others may be just some
+            mesmerising patterns.
+          </p>
+        </div>
+      </div>
+
+      <div class="card mx-5 shadow">
+        <div class="row mt-3">
+          <div class="col-md-12 text-center">
+            <button
+              class="btn btn-outline-info change-iframe m-3"
+              data-src="OOPFT\index.html"
+            >
+              Fractal Tree
+            </button>
+            <button
+              class="btn btn-outline-info change-iframe m-3"
+              data-src="ASTART\fullscreen.html"
+            >
+              Astar Search
+            </button>
+            <button
+              class="btn btn-outline-info change-iframe m-3"
+              data-src="RactionDefusionModel\index.html"
+            >
+              Reaction Defusion Model</button
+            ><button
+              class="btn btn-outline-info change-iframe m-3"
+              data-src="SnakeGame\index.html"
+            >
+              Snake Game</button
+            ><button
+              class="btn btn-outline-info change-iframe m-3"
+              data-src="SorTME\index.html"
+            >
+              Multiple Sorts</button
+            ><button
+              class="btn btn-outline-info change-iframe m-3"
+              data-src="StarInvaders\index.html"
+            >
+              Star Invaders
+            </button>
+          </div>
+        </div>
+
+        <div class="row mt-1">
+          <div class="col-md-12 text-center iframe-container">
+            <iframe
+              class="responsive-iframe"
+              id="iframe"
+              src=""
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const iframe = document.getElementById("iframe");
+      const changeButtons = document.querySelectorAll(".change-iframe");
+
+      changeButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const newSrc = this.getAttribute("data-src");
+          iframe.src = newSrc;
+        });
+      });
+    </script>
+  </body>
+</html>
