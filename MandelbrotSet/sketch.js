@@ -1,39 +1,50 @@
-// var minval = -0.5;
-// var maxval = -0.5;
-var minSlide;
-var maxSlide;
+var minval = -0.5;
+var maxval = 0.5;
+
+var minSlider;
+var maxSlider;
+
+var frDiv;
+
 function setup() {
-  createCanvas(240, 240);
+  createCanvas(200, 200);
   pixelDensity(1);
-  minSlide = createSlider(-3, 0, -2.5, 0.1);
-  maxSlide = createSlider(0, 3, 2.5, 0.1);
+
+  minSlider = createSlider(-2.5, 0, -2.5, 0.01);
+  maxSlider = createSlider(0, 2.5, 2.5, 0.01);
+
+  frDiv = createDiv("");
 }
+
 function draw() {
-  var maxiter = 100;
+  var maxiterations = 100;
+
   loadPixels();
   for (var x = 0; x < width; x++) {
     for (var y = 0; y < height; y++) {
-      var a = map(x, 0, width, minSlide.value(), maxSlide.value());
-      var b = map(y, 0, height, minSlide.value(), maxSlide.value());
-      var n = 0;
+      var a = map(x, 0, width, minSlider.value(), maxSlider.value());
+      var b = map(y, 0, height, minSlider.value(), maxSlider.value());
+
       var ca = a;
       var cb = b;
-      while (n < maxiter) {
+
+      var n = 0;
+
+      while (n < maxiterations) {
         var aa = a * a - b * b;
         var bb = 2 * a * b;
         a = aa + ca;
         b = bb + cb;
-        if (abs(a + b) > 16) {
+        if (a * a + b * b > 16) {
           break;
         }
         n++;
       }
-      var bright;
-      // bright = 200;
-      // bright = map(floor((n * 16) % 255), 0, maxiter, 0, 255);
-      bright = map(n, 0, maxiter, 0, 1);
+
+      var bright = map(n, 0, maxiterations, 0, 1);
       bright = map(sqrt(bright), 0, 1, 0, 255);
-      if (n === maxiter) {
+
+      if (n == maxiterations) {
         bright = 0;
       }
 
@@ -45,4 +56,6 @@ function draw() {
     }
   }
   updatePixels();
+
+  frDiv.html(floor(frameRate()));
 }
