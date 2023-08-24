@@ -7,7 +7,7 @@ var maxSlider;
 var frDiv;
 
 function setup() {
-  createCanvas(200, 200);
+  createCanvas(400, 400);
   pixelDensity(1);
 
   minSlider = createSlider(-2.5, 0, -2.5, 0.01);
