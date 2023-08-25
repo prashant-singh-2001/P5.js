@@ -10,10 +10,10 @@ var a = 1;
 var b = 1;
 function setup() {
   createCanvas(1000, 1000);
-  slider1 = createSlider(1, 100, 5, 1);
-  slider2 = createSlider(1, 100, 5, 0.1);
-  slider3 = createSlider(1, 100, 5, 0.1);
-  slider4 = createSlider(1, 100, 5, 0.1);
+  slider1 = createSlider(1, 10, 5, 1);
+  slider2 = createSlider(1, 10, 5, 0.1);
+  slider3 = createSlider(1, 10, 5, 0.1);
+  slider4 = createSlider(1, 10, 5, 0.1);
 }
 
 function superShape(theta) {
@@ -30,10 +30,10 @@ function draw() {
   n1 = slider2.value();
   n2 = slider3.value();
   n3 = slider4.value();
-  background(51);
+  background(m * 25);
   translate(width / 2, height / 2);
   stroke(255);
-  noFill();
+  fill(n1 * 25, n2 * 25, n3 * 25);
 
   var scale = 200;
   var total = 1000;
