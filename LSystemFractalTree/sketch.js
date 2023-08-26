@@ -1,14 +1,13 @@
 var axiom = "F";
 var rules = [];
-var len = 100;
+var len = 300;
 rules[0] = { a: "F", b: "FF+[+F-F-F]-[-F+F+F]" };
 var angle;
-
+var x = 1;
 var sentence = axiom;
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(1000, 1000);
   background(0);
-  createP(axiom);
   turtle();
   var button = createButton("generate");
   button.mousePressed(generate);
@@ -26,14 +25,15 @@ function turtle() {
       line(0, 0, 0, -len);
       translate(0, -len);
     } else if (current == "+") {
-      rotate(angle);
+      rotate(x * angle);
     } else if (current == "-") {
-      rotate(-angle);
+      rotate(-x * angle);
     } else if (current == "[") {
       push();
     } else if (current == "]") {
       pop();
     }
+    // x *= -1;
   }
 }
 
@@ -55,6 +55,5 @@ function generate() {
     }
   }
   sentence = nextSentence;
-  createP(sentence);
   turtle();
 }
