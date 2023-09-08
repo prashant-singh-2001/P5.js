@@ -10,9 +10,12 @@
       type="image/gif"
     />
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
     />
+
     <style>
       /* Add any additional custom styles here */
       .iframe-container {
@@ -38,20 +41,23 @@
       .button-group .btn {
         margin: 5px;
       }
+      body {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
     </style>
   </head>
   <body>
     <div class="container-fluid mt-3">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h1 class="display-4">Prashant's Voyage In P5.js</h1>
+          <h1 class="display-3">Prashant's Voyage In P5.js</h1>
         </div>
       </div>
 
       <div class="row mt-3">
         <div class="col-md-6">
-          <h2>What am I doing here?</h2>
-          <p>
+          <h2 class="display-4">What am I doing here?</h2>
+          <p class="blockquote">
             This is the exploratory tab for all the mini-projects I created by
             p5.js, some of them are games while others may be just some
             mesmerizing patterns.
@@ -63,7 +69,10 @@
         <div class="row mt-3">
           <div class="col-md-12 text-center">
             <!-- Button Group for Interactive Projects -->
-            <div class="button-group alert-warning mx-2 my-1 rounded">
+            <div class="button-group bg-dark-subtle mx-2 my-1 rounded">
+              <div class="col-md-12">
+                <h1 class="display-5">Interactiables</h1>
+              </div>
               <button
                 class="btn btn-outline-info btn-dark change-iframe m-3"
                 data-src="OOPFT\index.html"
@@ -109,55 +118,58 @@
             </div>
 
             <!-- Button Group for Non-interactive Projects -->
-            <div class="button-group alert-danger mx-2 my-1 rounded">
+            <div class="button-group bg-success-subtle mx-2 my-1 rounded">
+              <div class="col-md-12">
+                <h1 class="display-5">Non-interactiables</h1>
+              </div>
               <button
-                class="btn btn-outline-info change-iframe m-3"
+                class="btn btn-outline-danger btn-light change-iframe m-3"
                 data-src="FractalTrees\index.html"
               >
                 Auto Generated Angle Select Fractal Tree
               </button>
               <button
-                class="btn btn-outline-info change-iframe m-3"
+                class="btn btn-outline-dark btn-light change-iframe m-3"
                 data-src="SpaceColonizationTree\index.html"
               >
                 Space Colonizer Fractal Tree
               </button>
               <button
-                class="btn btn-outline-info change-iframe m-3"
+                class="btn btn-outline-warning btn-light change-iframe m-3"
                 data-src="RactionDefusionModel\index.html"
               >
                 Reaction Diffusion Model
               </button>
               <button
-                class="btn btn-outline-info change-iframe m-3"
+                class="btn btn-outline-primary btn-light change-iframe m-3"
                 data-src="TSP\index.html"
               >
                 TSP - V0.0.1
               </button>
               <button
-                class="btn btn-outline-info change-iframe m-3"
+                class="btn btn-outline-secondary btn-light change-iframe m-3"
                 data-src="Phyllotaxis\index.html"
               >
                 Phyllotaxis
               </button>
               <button
-                class="btn btn-outline-info change-iframe m-3"
+                class="btn btn-outline-info btn-light change-iframe m-3"
                 data-src="TSPLexical\index.html"
               >
                 TSP Evolved (V0.25.1)</button
               ><button
-                class="btn btn-outline-info change-iframe m-3"
+                class="btn btn-outline-success btn-light change-iframe m-3"
                 data-src="TSP-Genetic Alogrithm\index.html"
               >
                 Genetical TSP (V1.25.1)
               </button>
               <button
-                class="btn btn-outline-info change-iframe m-3"
+                class="btn btn-outline-secondary btn-light change-iframe m-3"
                 data-src="MandelbrotSet\index.html"
               >
                 Mandelbrot Set</button
               ><button
-                class="btn btn-outline-info change-iframe m-3"
+                class="btn btn-outline-danger btn-light change-iframe m-3"
                 data-src="SmartRockets\index.html"
               >
                 Wandering Rocket
